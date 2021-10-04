@@ -16,7 +16,18 @@ movies.each do |m|
 
     if production_company && production_company.valid?
         # create movie here
+        movie = production_company.movies.create(   title:          m["original_title"],
+                                                    year:           m["year"],
+                                                    duration:       m["duration"],
+                                                    description:    m["description"],
+                                                    average_vote:   m["avg_vote"]
+                                                )
+        # movie && movie.valid?
+        puts "Invalid movie #{m['original_title']}" unless movie&.valid?
     else    
         puts "Invalid Production Company, #{m['production_company']} for movie #{m['original_title']}"
     end
 end
+
+puts "Created #{ProductionCompany.count} Production Conpanies"
+puts "Created #{Movie.count} Movies"
