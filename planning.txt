@@ -1,5 +1,5 @@
-movies table
-- id, title, year,  dyration, description, average_vote, production_company_id
+Movies table
+- id, title, year,  duration, description, average_vote, production_company_id
 
 Production_Ciompanies table (1 to many)
 - id, name
